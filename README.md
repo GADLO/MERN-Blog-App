@@ -1,2 +1,2 @@
 # MERN-Blog-App
-my blog
+my blog use MERN stack
