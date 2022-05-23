@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import 'moment/locale/en-gb';
 import { Image, chakra, useColorModeValue, Link, Box, Flex, Spacer } from '@chakra-ui/react';
+import MarkdownComponents from './Markdown'
 
 const Post = ({ post }) => {
   const convertRelativeTime = date => {
@@ -44,7 +45,7 @@ const Post = ({ post }) => {
             {post.subtitle}
           </chakra.span>
           <chakra.p mt={4} fontSize="sm" color={useColorModeValue('gray.400', 'gray.400')}>
-            {post.content.substring(0, 225) + '...'}
+            <MarkdownComponents content={post.content.substring(0, 225) + '...'}/>
           </chakra.p>
         </Box>
 

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GADLO/MERN-Blog-App#readme",
   "dependencies": {
-    "concurrently": "^7.2.0"
+    "concurrently": "^7.2.0",
+    "react-syntax-highlighter": "^15.5.0"
   }
 }

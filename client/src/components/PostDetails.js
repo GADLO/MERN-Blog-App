@@ -9,7 +9,7 @@ import EditPostForm from './EditPostForm';
 import Loader from './Loader';
 import { Flex, Box, Image, chakra, Spacer, Link, Button, Heading, Text } from '@chakra-ui/react';
 import { EditIcon, DeleteIcon } from '@chakra-ui/icons';
-import ReactMarkdown from 'react-markdown'
+import MarkdownComponents from './Markdown'
 
 const PostDetails = () => {
   const { id } = useParams();
@@ -119,7 +119,7 @@ const PostDetails = () => {
                     </figcaption>
                   </figure>
                   <Text mt={4} fontSize="lg" color={('gray.400', 'gray.300')}>
-                    <ReactMarkdown children={currentPost?.content}/>
+                    <MarkdownComponents content={currentPost?.content}/>
                   </Text>
                 </Box>
               </Box>
