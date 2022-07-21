@@ -26,6 +26,14 @@
   background: rgb(0 0 0 / 72%) !important;
 }
 
+.codeStyle{
+  border-radius: 5px;
+  background-color: #676caf;
+  font-style: bold;
+}
+
+
+
 @keyframes errorAlert {
   0% {
     opacity: 0;

@@ -32,7 +32,7 @@ const AddPostForm = ({ isOpen, onClose }) => {
   const onSubmit = data => {
     try {
       dispatch(createPost({ ...data, image: file }));
-      toast.success('Blog successfully added!');
+      toast.success('文章成功添加!');
       clearForm();
     } catch (error) {
       toast.error(error);
@@ -48,12 +48,12 @@ const AddPostForm = ({ isOpen, onClose }) => {
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Add New Post</ModalHeader>
+        <ModalHeader>添加文章</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb={6}>
           <form noValidate autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
             <FormControl isInvalid={errors.title} minH={'100px'}>
-              <FormLabel>Title</FormLabel>
+              <FormLabel>标题</FormLabel>
               <Input
                 id="title"
                 label="Başlık"
@@ -69,7 +69,7 @@ const AddPostForm = ({ isOpen, onClose }) => {
             </FormControl>
 
             <FormControl isInvalid={errors.subtitle} minH={'100px'}>
-              <FormLabel>Subtitle</FormLabel>
+              <FormLabel>小标题</FormLabel>
               <Input
                 id="subtitle"
                 label="Alt Başlık"
@@ -85,7 +85,7 @@ const AddPostForm = ({ isOpen, onClose }) => {
             </FormControl>
 			
 			<FormControl isInvalid={errors.author} minH={'100px'}>
-              <FormLabel>Author</FormLabel>
+              <FormLabel>作者</FormLabel>
               <Input
                 id="author"
                 label="Author"
@@ -101,7 +101,7 @@ const AddPostForm = ({ isOpen, onClose }) => {
             </FormControl>
 
             <FormControl minH={'100px'}>
-              <FormLabel>Category</FormLabel>
+              <FormLabel>标签</FormLabel>
               <Controller
                 as={
                   <Select placeholder="Choose Category">
@@ -118,7 +118,7 @@ const AddPostForm = ({ isOpen, onClose }) => {
               />
             </FormControl>
             <FormControl isInvalid={errors.content} minH={'100px'}>
-              <FormLabel>Content</FormLabel>
+              <FormLabel>内容</FormLabel>
               <Textarea
                 id="content"
                 label="İçerik"
@@ -143,9 +143,9 @@ const AddPostForm = ({ isOpen, onClose }) => {
 
             <ModalFooter pr={0}>
               <Button colorScheme="blue" mr={3} onClick={() => handleSubmit(onSubmit)()}>
-                Save
+                保存
               </Button>
-              <Button onClick={onClose}>Cancel</Button>
+              <Button onClick={onClose}>取消</Button>
             </ModalFooter>
           </form>
         </ModalBody>

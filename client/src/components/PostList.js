@@ -24,9 +24,10 @@ const PostsList = () => {
       w="full"
       align="center"
       justify="center"
+      
       minH="100vh"
     >
-      <Wrap spacing="30px" justify="center">
+      <Wrap spacing="30px" justify="center" direction="column">
         {error && <p>{error}</p>}
         {loading ? (
           <Loader />
@@ -37,7 +38,7 @@ const PostsList = () => {
               rounded="lg"
               shadow="md"
               bg={('white', 'gray.800')}
-              maxW="md"
+              maxW="lg"
               key={post?._id}
               boxShadow="dark-lg"
             >

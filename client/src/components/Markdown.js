@@ -8,7 +8,7 @@ import markdown from 'react-syntax-highlighter/dist/cjs/languages/prism/markdown
 import json from 'react-syntax-highlighter/dist/cjs/languages/prism/json'
 import javascript from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
 import jsx from 'react-syntax-highlighter/dist/cjs/languages/prism/jsx'
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 SyntaxHighlighter.registerLanguage('tsx', tsx)
 SyntaxHighlighter.registerLanguage('jsx', jsx)
@@ -25,8 +25,10 @@ export default function BlogMarkdown({ content }) {
       const match = /language-(\w+)/.exec(className || '')
       return !inline && match ? (
         <SyntaxHighlighter
-          style={vscDarkPlus}
+          style={dark}
           language={match[1]}
+          className="codeStyle"
+          showLineNumbers
           PreTag='div'
           {...props}
         >

@@ -37,7 +37,7 @@ const PostDetails = () => {
 
   const removePost = () => {
     try {
-      if (window.confirm(`Are you sure? You can't undo this action afterwards.`)) {
+      if (window.confirm(`确定删除吗，此操作不可逆`)) {
         dispatch(deletePost(currentPost?._id));
         toast.success('Blog successfully removed!');
         setTimeout(() => {
@@ -66,9 +66,9 @@ const PostDetails = () => {
                     {currentPost?.title}
                   </Heading>
                   <Heading
-                    as="h2"
+                    // as="h2"
                     fontWeight="normal"
-                    size="sm"
+                    // size="sm"
                     mt={2}
                     fontStyle="italic"
                     color={('gray.600', 'gray.400')}
@@ -83,7 +83,7 @@ const PostDetails = () => {
                           h={10}
                           fit="cover"
                           rounded="full"
-                          src="https://source.unsplash.com/random/48x48"
+                          src="https://res.cloudinary.com/dnjgm2bcv/image/upload/v1642571458/blog/tianyi-ma-WiONHd_zYI4-unsplash_v4yy4g.jpg"
                           alt="Avatar"
                         />
                         <Flex align="flex-start" direction="column">
@@ -111,14 +111,14 @@ const PostDetails = () => {
                     <Image
                       w="100%"
                       borderRadius="md"
-                      src={currentPost?.image || 'https://loremflickr.com/1280/720'}
+                      src={currentPost?.image || 'https://source.unsplash.com/random/1280×720/?ocean'}
                       alt={currentPost?.tag}
                     />
                     <figcaption style={{ textAlign: 'center', color: '#afacac', fontSize: '0.9rem' }}>
-                      Photo by Lopez Robin on Unsplash
+                      Photo
                     </figcaption>
                   </figure>
-                  <Text mt={4} fontSize="lg" color={('gray.400', 'gray.300')}>
+                  <Text  color={('gray.400', 'gray.300')}>
                     <MarkdownComponents content={currentPost?.content}/>
                   </Text>
                 </Box>
